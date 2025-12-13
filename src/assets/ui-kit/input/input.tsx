@@ -5,9 +5,8 @@ import styles from './input.module.scss';
 import { InputHTMLAttributes, forwardRef } from 'react';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  size?: 'sm' | 'md' | 'bg';
-  variant?: 'default' | 'contrast' | 'empty';
-  border?: 'default' | 'rounded';
+  variant?: 'default' | 'leader' | 'contrast' | 'elevated' | 'empty' | 'glass' | 'brand' | 'accent';
+  size?: 'sm' | 'md' | 'lg';
   error?: boolean;
   fullWidth?: boolean;
   label?: string | false;
@@ -18,7 +17,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     {
       size = 'md',
       variant = 'default',
-      border = 'default',
       error = false,
       fullWidth = false,
       label = false,
@@ -28,26 +26,28 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     ref
   ) => {
     return (
-      <div className={clsx(styles.wrapper, { [styles.fullWidth]: fullWidth })}>
-        {label && <div className={styles.label}>{label}</div>}
-        <input
-          ref={ref}
-          className={clsx(
-            styles.input,
-            {
-              [styles.sm]: size === 'sm',
-              [styles.bg]: size === 'bg',
-              [styles.contrast]: variant === 'contrast',
-              [styles.empty]: variant === 'empty',
-              [styles.rounded]: border === 'rounded',
-              [styles.error]: error,
-            },
-            { [styles.fullWidth]: fullWidth },
-            className
-          )}
-          {...props}
-        />
-      </div>
+      <input
+        ref={ref}
+        className={clsx(
+          styles.input,
+          {
+            [styles.default]: variant === 'default',
+            [styles.leader]: variant === 'leader',
+            [styles.contrast]: variant === 'contrast',
+            [styles.elevated]: variant === 'elevated',
+            [styles.empty]: variant === 'empty',
+            [styles.glass]: variant === 'glass',
+            [styles.brand]: variant === 'brand',
+            [styles.accent]: variant === 'accent',
+            [styles.fullWidth]: fullWidth,
+            [styles.sm]: size === 'sm',
+            [styles.bg]: size === 'lg'
+          },
+          { [styles.fullWidth]: fullWidth },
+          className
+        )}
+        {...props}
+      />
     );
   }
 );

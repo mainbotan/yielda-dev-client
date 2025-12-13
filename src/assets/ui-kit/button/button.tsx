@@ -7,29 +7,22 @@ import Spinner from '../spinner/spinner'; // Импортируем спинне
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
-  variant?: 'classic' | 'default' | 'contrast' | 'brand';
-  border?: 'classic' | 'rounded';
-  animation?: 'none' | 'scale';
-  invert?: boolean;
+  variant?: 'default' | 'leader' | 'contrast' | 'elevated' | 'empty' | 'glass' | 'brand' | 'accent';
   fullWidth?: boolean;
   size?: 'sm' | 'md' | 'lg';
-  loading?: boolean; // Добавляем пропс loading
+  loading?: boolean;
 }
 
 export default function Button({
   children,
-  variant = 'classic',
-  border = 'classic',
-  animation = 'none',
+  variant = 'default',
   size = 'md',
-  invert = false,
   fullWidth = false,
-  loading = false, // Значение по умолчанию
+  loading = false,
   className,
   disabled,
   ...props
 }: ButtonProps) {
-  // Комбинируем disabled состояния
   const isDisabled = disabled || loading;
 
   return (
@@ -38,12 +31,14 @@ export default function Button({
         className={clsx(
           styles.button,
           {
-            [styles.contrast]: variant === 'contrast',
             [styles.default]: variant === 'default',
+            [styles.leader]: variant === 'leader',
+            [styles.contrast]: variant === 'contrast',
+            [styles.elevated]: variant === 'elevated',
+            [styles.empty]: variant === 'empty',
+            [styles.glass]: variant === 'glass',
             [styles.brand]: variant === 'brand',
-            [styles.rounded]: border === 'rounded',
-            [styles.scale]: animation === 'scale',
-            [styles.invert]: invert,
+            [styles.accent]: variant === 'accent',
             [styles.fullWidth]: fullWidth,
             [styles.sm]: size === 'sm',
             [styles.bg]: size === 'lg',

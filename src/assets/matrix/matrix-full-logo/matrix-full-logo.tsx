@@ -15,7 +15,6 @@ export default function MatrixFullLogo({
   return (
     <>
         <div className={clsx(styles.frame, className)}>
-            <img src='/images/logo/base.png' className={styles.i} />
             <span className={styles.m}>Matrix</span>
             <span className={styles.o}>One</span>
         </div>

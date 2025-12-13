@@ -3,13 +3,9 @@ import '@/assets/styles/main.scss';
 import styles from './layout.module.scss';
 import Providers from "./providers";
 import ScrollToTop from "./ScrollToTop";
-import Header from "./(sections)/components/header/header";
-import Footer from "./(sections)/components/footer/footer";
-import SystemStatusBar from "./(sections)/components/system-status-bar/system-status";
-import FeedbackBar from "./(sections)/components/feedback-bar/feedback";
 
 export const metadata: Metadata = {
-  title: "Matrix One",
+  title: "Matrix One - Разработчикам.",
   description: "",
   appleWebApp: {
     capable: true,
@@ -40,13 +36,18 @@ export default function RootLayout({
       </head>
       <body>
         <Providers>
-            <Header />
-            <main className={styles.content}>
-              {children}
+            <main className={styles.container}>
+              <div className={styles.focus}>
+                  <div className={styles.panel}>
+                    <div className={styles.inner}>
+                      
+                    </div>
+                  </div>
+                  <div className={styles.content}>
+
+                  </div>
+              </div>
             </main>
-            <FeedbackBar />
-            <SystemStatusBar />
-            <Footer />
         </Providers>
       </body>
     </html>

@@ -2,16 +2,10 @@
     display: inline-flex;
     font-size: 1em;
     flex-flow: row nowrap;
-    align-items: center;
     gap: 0.2em;
     font-weight: 600;
     color: #ffffff;
 
-    .i {
-        width: 0.8em;
-        height: 0.8em;
-        margin-right: 0.1em;
-    }
     .o {
         color: var(--color-brand) !important;
     }

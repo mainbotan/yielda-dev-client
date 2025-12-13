@@ -1,56 +1,72 @@
 @mixin theme {
-  // ==================== CORE ====================
-  --color-brand: #ff4c4c;
-  --color-leader: #ffffff;                      // --color-leader
-  
-  // ==================== BACKGROUNDS ====================
-  --color-background-primary: #ffffff;          // --color-background-primary
-  --color-background-primary-invert: #0a0a0a;   // --color-background-primary-invert
-  --color-background-secondary: #d7d7d7;        // --color-background-secondary
-  --color-background-secondary-trans: #d7d7d7b0; // --color-background-secondary-trans
-  --color-background-tertiary: #c2c2c2;         // --color-background-tertiary
-  --color-background-contrast: #121212;         // --color-background-contrast
-  --color-background-input: #eeeeee;            // --color-background-input
-  --color-background-header: rgba(222, 222, 222, 0.9); // --color-background-header
-  --color-background-modal-widget: #bdbdbd;
-  
-  // =================== ALTERNATIVE DESIGN ===================
-  --color-alternative-primary: #222222;
-  --color-alternative-secondary: #0f0f0f;
+    // ==================== CORE IDENTITY ====================
+    --color-brand: #9e37d6;
+    --color-brand-light: var(--color-brand);
+    --color-brand-pale: var(--color-brand);
+    --color-leader: #0e0e0f;
+    --color-contrast: #ebebeb;
+    --color-header: #1e1e1e;
+    --color-accent: rgb(104, 135, 236);
+    --color-accent-text-primary: #ffffff;
+    
+    // ==================== AIRY SURFACES ====================
+    --color-surface-primary: #141414;
+    --color-surface-secondary: #282828;
+    --color-surface-tertiary: rgb(35, 35, 35);
+    --color-surface-elevated: #1c1b1b;
+    --color-surface-overlay: rgba(18, 17, 17, 0.95);
+    --color-surface-glass: rgba(15, 15, 15, 0.801);
+    --color-surface-glass-secondary: rgba(23, 23, 23, 0.775);
 
-  // ==================== TEXT ====================
-  --color-text-primary: #0a0a0a;                // --color-text-primary
-  --color-text-secondary: #6e6e6e;              // --color-text-secondary
-  --color-text-contrast: #d4d3d3;               // --color-text-contrast
-  --color-text-description: #808080;            // --color-text-description
-  
-  // ==================== BORDERS & LINES ====================
-  --color-border-primary: #eaeaea;              // --color-border-primary
-  --color-border-secondary: #d2d2d2;            // --color-border-primary-color
-  --color-line-stroke-primary: #b1b1b1;         // --color-line-stroke-primary
-  --color-line-stroke-secondary: #3535359e;     // --color-line-stroke-secondary
-  
-  // ==================== ICONS ====================
-  --color-icon-primary: #161616;                // --color-icon-primary
-  --color-icon-primary-invert: #eeeeee;         // --color-icon-primary-invert
-  --color-icon-primary-unactive: #989898;
-  
-  // ==================== ACCENTS ====================
-  --color-accent-primary: #49a3ff;              // --color-accent-primary
-  --color-accent-primary-trans: #49a4ff77;
-  --color-accent-primary-contrast: #eeeeee;     // --color-accent-primary-contrast
-  --color-accent-secondary: #8e4ec6;            // --color-accent-secondary
-  --color-accent-secondary-contrast: #eeeeee;   // --color-accent-secondary-contrast
-  
-  // ==================== STATUS ====================
-  --color-status-error: #dc2626;                // --color-status-error
-  --color-status-error-rgb: 220, 38, 38;        // --color-status-error-rgb
-  
-  // ==================== LINKS ====================
-  --color-link-primary: #52a8ff;                // --color-link-primary
-  --color-green: #1fcd62;
-  --color-blue: #0070f3;
-  --color-orange: #f38200;
-  --color-red: rgb(228, 37, 37);
-  --color-background-stylus: #e6e6e6;
+    // ==================== CALM TEXT ====================
+    --color-text-primary: #ededed;
+    --color-text-secondary: #c2c2c2;
+    --color-text-hint: #4793fd;
+    --color-text-description: #575757;
+    --color-text-ghost: #c1c1c1;
+    --color-contrast-text-primary: #0c0c0c;
+    --color-contrast-text-secondary: #202020;
+    --color-contrast-text-hint: #4d93f6;
+    --color-contrast-text-description: #868585;
+    --color-contrast-text-ghost: #cbd5e1;
+
+    // ==================== SUBTLE STROKES ====================
+    --color-stroke-primary: #323232;
+    --color-stroke-secondary: #222222;
+    --color-stroke-tertiary: #696969;
+    --color-stroke-focus: var(--color-brand-light);
+
+    // ==================== GENTLE INDICATORS ====================
+    --color-error: #f87171;
+    --color-error-light: #fecaca;
+    --color-warning: #fbbf24;
+    --color-warning-light: #fef3c7;
+    --color-normal: #60a5fa;
+    --color-normal-light: #dbeafe;
+    --color-critical: #ef4444;
+    --color-success: #34d399;
+    --color-success-light: #d1fae5;
+
+    // ==================== ICONS ====================
+    --color-icon-primary: #adadad;
+    --color-icon-active: var(--color-accent);
+    
+    // ==================== EXTENDED PALETTE ====================
+    --color-red: #f63939;
+    --color-blue: #4793fd;
+    --color-orange: #fb923c;
+    --color-yellow: #facc15;
+    --color-green: #34d399;
+    --color-purple: #4e20c3;
+    --color-cyan: #22d3ee;
+    --color-magenta: #f472b6;
+
+    // ==================== EFFECTS & GRADIENTS ====================
+    --gradient-brand: linear-gradient(135deg, var(--color-brand) 0%, var(--color-blue) 100%);
+    --gradient-surface: linear-gradient(135deg, var(--color-surface-primary) 0%, var(--color-surface-secondary) 100%);
+    --gradient-subtle: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    
+    --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --shadow-gentle: 0 4px 6px rgba(0, 0, 0, 0.03);
+    --shadow-floating: 0 10px 25px rgba(0, 0, 0, 0.05);
 }

@@ -5,13 +5,13 @@ import styles from './spinner.module.scss';
 import { HTMLAttributes } from 'react';
 
 interface SpinnerProps extends HTMLAttributes<HTMLDivElement> {
-  size?: 'sm' | 'md' | 'bg';
-  variant?: 'classic' | 'contrast' | 'accent' | 'brand';
+  size?: 'sm' | 'md' | 'lg';
+  variant?: 'default' | 'leader' | 'contrast' | 'accent' | 'brand';
 }
 
 export default function Spinner({
   size = 'md',
-  variant = 'classic',
+  variant = 'default',
   className,
   ...props
 }: SpinnerProps) {
@@ -21,7 +21,9 @@ export default function Spinner({
         styles.spinner,
         {
           [styles.sm]: size === 'sm',
-          [styles.bg]: size === 'bg',
+          [styles.lg]: size === 'lg',
+          [styles.default]: variant === 'default',
+          [styles.leader]: variant === 'leader',
           [styles.contrast]: variant === 'contrast',
           [styles.accent]: variant === 'accent',
           [styles.brand]: variant === 'brand',

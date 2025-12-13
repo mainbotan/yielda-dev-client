@@ -5,9 +5,8 @@ import styles from './textarea.module.scss';
 import { TextareaHTMLAttributes, forwardRef } from 'react';
 
 interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
-  size?: 'sm' | 'md' | 'bg';
-  variant?: 'default' | 'contrast' | 'empty';
-  border?: 'default' | 'rounded';
+  variant?: 'default' | 'leader' | 'contrast' | 'elevated' | 'empty' | 'glass' | 'brand' | 'accent';
+  size?: 'sm' | 'md' | 'lg';
   error?: boolean;
   fullWidth?: boolean;
   resize?: 'none' | 'both' | 'horizontal' | 'vertical';
@@ -18,7 +17,6 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
     {
       size = 'md',
       variant = 'default',
-      border = 'default',
       error = false,
       fullWidth = false,
       resize = 'both',
@@ -34,10 +32,15 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           styles.textarea,
           {
             [styles.sm]: size === 'sm',
-            [styles.bg]: size === 'bg',
+            [styles.lg]: size === 'lg',
+            [styles.default]: variant === 'default',
+            [styles.leader]: variant === 'leader',
             [styles.contrast]: variant === 'contrast',
+            [styles.elevated]: variant === 'elevated',
             [styles.empty]: variant === 'empty',
-            [styles.rounded]: border === 'rounded',
+            [styles.glass]: variant === 'glass',
+            [styles.brand]: variant === 'brand',
+            [styles.accent]: variant === 'accent',
             [styles.error]: error,
             [styles.fullWidth]: fullWidth,
             [styles.resizeNone]: resize === 'none',
