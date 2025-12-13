@@ -1,7 +1,7 @@
 export default function Page() {
     return (
-        <div>
-            
+        <div style={{height: '200vh'}}>
+
         </div>
     )
 }

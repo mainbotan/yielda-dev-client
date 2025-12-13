@@ -1,0 +1,184 @@
+@use '@/assets/styles/_mixins.scss' as *;
+
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1;
+  gap: 1.5em;
+  padding: 2rem 0;
+}
+
+// Top
+.top {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 0.5em;
+
+  .icon {
+    display: inline-flex;
+    align-items: start;
+    justify-content: center;
+
+    .square {
+      display: flex;
+      width: 1.9em;
+      height: 1.9em;
+      border-radius: 0.4em;
+      align-items: center;
+      justify-content: center;
+
+      .svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .logo {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.2em;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1em;
+
+    .secondary {
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      font-size: 0.8em;
+    }
+  }
+}
+
+// Branches
+.branches {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1em;
+
+  .branch {
+    display: flex;
+    flex-flow: column nowrap;
+
+    .base {
+      display: flex;
+      flex-flow: row nowrap;
+      gap: 0.6em;
+      text-decoration: none;
+      @include cursor(pointer);
+      transition: transform var(--transition);
+
+      .marker {
+        display: flex;
+        align-items: start;
+
+        .area {
+          width: 1.5em;
+          height: 1.5em;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .point {
+          width: 0.5em;
+          height: 0.5em;
+          background-color: var(--color-surface-tertiary);
+          transform: rotate(-45deg);
+          margin-left: 0.1em;
+          transition: background-color var(--transition);
+        }
+      }
+
+      .info {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        gap: .2em .7em;
+
+        .name {
+          display: flex;
+          font-size: 0.95em;
+          min-height: 1.5em;
+          line-height: 1.2;
+          align-items: center;
+          transition: color var(--transition);
+          color: inherit;
+        }
+
+        .tags {
+          display: flex;
+          flex-flow: row wrap;
+          font-size: 0.85em;
+          gap: 0.4em;
+
+          .tag {
+            display: inline-flex;
+            height: 1.6em;
+            align-items: center;
+            justify-content: center;
+            padding: 0.1em 0.4em 0 0.4em;
+            border: 1px solid var(--color-accent);
+            color: var(--color-accent);
+            border-radius: 0.2em;
+          }
+        }
+      }
+
+      &:hover {
+        transform: translateX(.4em);
+        
+        .marker .point {
+          background-color: var(--color-surface-secondary);
+        }
+        
+        .info .name {
+          color: var(--color-text-primary);
+        }
+      }
+    }
+
+    .childrens {
+      display: flex;
+      flex-flow: column nowrap;
+      padding: 0.6em 0 0 0.5em;
+      gap: 0.6em;
+    }
+
+    // Активный стиль - применяется только к активному элементу
+    &.active {
+      // Цвет маркера для активного элемента
+      .base .marker .point {
+        background-color: var(--color-accent) !important;
+      }
+      
+      // Цвет текста для активного элемента
+      .base .info .name {
+        color: var(--color-accent) !important;
+      }
+    }
+    
+    // Дочерние элементы внутри активного родителя не должны получать активный стиль
+    &.active .childrens .branch {
+      &:not(.active) {
+        .base .marker .point {
+          background-color: var(--color-surface-tertiary) !important;
+        }
+        
+        .base .info .name {
+          color: inherit !important;
+        }
+      }
+      
+      &.active {
+        .base .marker .point {
+          background-color: var(--color-accent) !important;
+        }
+        
+        .base .info .name {
+          color: var(--color-accent) !important;
+        }
+      }
+    }
+  }
+}

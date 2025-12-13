@@ -3,6 +3,7 @@ import '@/assets/styles/main.scss';
 import styles from './layout.module.scss';
 import Providers from "./providers";
 import ScrollToTop from "./ScrollToTop";
+import { NavBar } from "./components/nav-bar/nav-bar";
 
 export const metadata: Metadata = {
   title: "Matrix One - Разработчикам.",
@@ -40,11 +41,11 @@ export default function RootLayout({
               <div className={styles.focus}>
                   <div className={styles.panel}>
                     <div className={styles.inner}>
-                      
+                      <NavBar />
                     </div>
                   </div>
                   <div className={styles.content}>
-
+                    {children}
                   </div>
               </div>
             </main>
