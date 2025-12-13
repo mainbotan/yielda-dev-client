@@ -1,17 +1,22 @@
 export const docsConfig = [
     {
         'name': 'Введение',
-        'href': '/docs/introduction',
-        'tags': [ 'NEW' ],
+        'href': '/',
+        'tags': [ 'V.1' ],
         'childrens': [
             {
-                'name': 'Пупупу',
+                'name': 'Мультитенатность',
                 'href': '/docs/pupupu'
             },
             {
-                'name': 'Тутутут',
+                'name': 'Изоляция данных',
                 'href': '/docs/tututut'
             }
         ]
-    }
+    },
+    {
+        'name': 'Dev...ooops',
+        'href': '/docs/devops',
+        'tags': [ 'NEW' ]
+    },
 ];

@@ -86,7 +86,7 @@
     display: inline-flex;
     border-right: 1px solid var(--color-stroke-primary);
     position: relative;
-    padding-left: 5rem;
+    padding-left: 4rem;
     padding-right: 1rem;
     background-color: var(--color-surface-primary);
 
@@ -97,6 +97,10 @@
         top: 0;
         height: 100vh;
         overflow: hidden;
+    }
+    
+    @media (max-width: 720px) {
+        padding: 0 1rem;
     }
 }
 
