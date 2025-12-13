@@ -1,0 +1,40 @@
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid var(--color-border-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  
+  // Размеры
+  &.sm {
+    width: 16px;
+    height: 16px;
+    border-width: 1.5px;
+  }
+  
+  &.bg {
+    width: 28px;
+    height: 28px;
+    border-width: 3px;
+  }
+  
+  // Варианты
+  &.contrast {
+    border-top-color: var(--color-text-contrast);
+  }
+  
+  &.accent {
+    border-top-color: var(--color-accent-primary);
+  }
+  
+  &.brand {
+    border-top-color: var(--color-brand);
+  }
+  
+  // Анимация
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+}

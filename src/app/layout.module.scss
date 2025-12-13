@@ -1,0 +1,76 @@
+.layout {
+    display: block;
+    min-height: 100vh;
+
+    .content {
+        display: block;
+        width: 100%;
+        min-height: 100vh;
+    }
+}
+
+
+// Not Found
+.container.notFound {
+    height: 100vh;
+    // background-color: #000000;
+    color: #0b0b0b;
+
+    .grid {
+        display: flex;
+        height: 80vh;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        
+        .frame {
+            display: inline-flex;
+            width: 100%;
+            max-width: 30rem;
+            flex-flow: column nowrap;
+            gap: 0.8rem;
+            padding: 1rem;
+            border-radius: 0.4em;
+
+            .title {
+                font-size: 1em;
+                font-weight: 600;
+                letter-spacing: 0.02em;
+                line-height: 1.2;
+            }
+            .description {
+                font-size: 0.4em;
+                line-height: 1.4;
+            }
+            .actions {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: start;
+                gap: 0.2em;
+
+                .link {
+                    display: flex;
+                    width: 100%;
+                }
+                .action {
+                    display: inline-flex;
+                    font-size: 0.44em;
+                    background-color: #000000;
+                    color: #eee;
+                    height: 3em;
+                    padding: 0 1.6em;
+                    border-radius: 2em;
+                    
+                    @media (max-width: 720px) {
+                        display: flex;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 720px) {
+            font-size: 1.4em;
+        }
+    }
+}
