@@ -1,0 +1,15 @@
+@use '@/assets/styles/_mixins.scss' as *;
+
+.h1, .h2, .h3 {
+    line-height: 1.2;
+    font-weight: 600;
+}
+.h1 {
+    font-size: 2em;
+}
+.h2 {
+    font-size: .8em;
+}
+.h3 {
+    font-size: .6em;
+}

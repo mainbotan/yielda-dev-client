@@ -101,10 +101,21 @@
     
     @media (max-width: 720px) {
         padding: 0 1rem;
+        width: 0;
+        padding: 0;
+        border: none;
+        font-size: 1.2em;
     }
 }
 
 // Content area
 .content {
     display: flex;
+    flex: 1;
+    padding: 2rem;
+    overflow: hidden;
+
+    @media (max-width: 720px) {
+        padding: 2rem 1rem;
+    }
 }

@@ -6,6 +6,69 @@
   flex: 1;
   gap: 1.5em;
   padding: 2rem 0;
+  
+  // Стили для мобилок
+  @media (max-width: 767px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-surface-primary);
+    z-index: 1000;
+    padding: 1.5rem;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    
+    &.mobileOpen {
+      transform: translateX(0);
+    }
+    
+    &.mobileClosed {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+// Стили для кнопки меню на мобилках
+.mobileMenuButton {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1001;
+  width: 5em;
+  height: 2.8em;
+  background-color: var(--color-surface-primary);
+  border-radius: 2em;
+  border: 2px solid var(--color-stroke-primary);
+  transition: border-color var(--transition);
+
+  .svg {
+    width: 1em;
+    height: 1em;
+    fill: var(--color-icon-primary);
+  }
+
+  &:hover {
+    border-color: var(--color-accent);
+  }
+}
+
+// Оверлей для мобилок
+.mobileOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  backdrop-filter: blur(2px);
+  
+  @media (min-width: 768px) {
+    display: none;
+  }
 }
 
 // Top
@@ -146,20 +209,16 @@
       gap: 0.6em;
     }
 
-    // Активный стиль - применяется только к активному элементу
     &.active {
-      // Цвет маркера для активного элемента
       .base .marker .point {
         background-color: var(--color-accent) !important;
       }
       
-      // Цвет текста для активного элемента
       .base .info .name {
         color: var(--color-accent) !important;
       }
     }
     
-    // Дочерние элементы внутри активного родителя не должны получать активный стиль
     &.active .childrens .branch {
       &:not(.active) {
         .base .marker .point {
