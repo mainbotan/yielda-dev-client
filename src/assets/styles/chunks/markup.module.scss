@@ -8,8 +8,36 @@
     font-size: 2em;
 }
 .h2 {
-    font-size: .8em;
+    font-size: 1.4em;
 }
 .h3 {
-    font-size: .6em;
+    font-size: 1em;
+}
+.p {
+    line-height: 1.4;
+    width: 100%;
+
+    .secondary {
+        color: var(--color-text-secondary);
+    }
+    .accent {
+        color: var(--color-accent);
+    }
+    .purple {
+        color: var(--color-purple);
+    }
+}
+.note {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 1em;
+    border-radius: 1em;
+    border: 1px solid var(--color-stroke-primary);
+    background-color: var(--color-stroke-secondary);
+    // box-shadow: 0 0 .2em var(--color-purple);
+    margin: 1em 0;
+    
+    &.reminder {
+        background-color: rgba(255, 255, 0, 0.062);
+    }
 }

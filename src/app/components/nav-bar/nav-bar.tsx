@@ -7,9 +7,9 @@ import Code from '@/assets/ui-kit/icons/code';
 import MenuIcon from '@/assets/ui-kit/icons/menu'; // Импортируем иконку меню
 import CloseIcon from '@/assets/ui-kit/icons/close'; // Импортируем иконку закрытия
 import { isSectionActive } from '@/assets/utils/sections';
-import { docsConfig } from './docs.config';
 import styles from './nav-bar.module.scss';
 import clsx from 'clsx';
+import { docsConfig } from '@/app/(docs)/docs.config';
 
 interface NavItemProps {
   item: typeof docsConfig[0];

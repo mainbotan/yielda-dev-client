@@ -114,8 +114,10 @@
     flex: 1;
     padding: 2rem;
     overflow: hidden;
+    flex-flow: column nowrap;
 
     @media (max-width: 720px) {
         padding: 2rem 1rem;
+        padding-top: 4rem;
     }
 }
