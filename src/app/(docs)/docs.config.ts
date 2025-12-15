@@ -8,14 +8,14 @@ export const docsConfig = [
                 'href': '/what-is-matrix'
             },
             {
-                'name': 'Не 1с и при чём тут Discord?',
+                'name': 'Не 1с, а Discord',
                 'href': '/not-1c',
                 'tags': [ 'Geek' ]
             }
         ]
     },
     {
-        'name': 'Стек и версионирование',
+        'name': 'Стек и технологии',
         'href': '/stack'
     }
 ];
