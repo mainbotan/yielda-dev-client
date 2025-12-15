@@ -2,12 +2,20 @@ export const docsConfig = [
     {
         'name': 'Введение',
         'href': '/',
-        'tags': [ 'V.1' ],
         'childrens': [
             {
                 'name': 'Что такое Matrix One?',
                 'href': '/what-is-matrix'
+            },
+            {
+                'name': 'Не 1с и при чём тут Discord?',
+                'href': '/not-1c',
+                'tags': [ 'Geek' ]
             }
         ]
+    },
+    {
+        'name': 'Стек и версионирование',
+        'href': '/stack'
     }
 ];
