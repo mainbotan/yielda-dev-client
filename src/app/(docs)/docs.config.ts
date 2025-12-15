@@ -4,8 +4,8 @@ export const docsConfig = [
         'href': '/',
         'childrens': [
             {
-                'name': 'Что такое Matrix One?',
-                'href': '/what-is-matrix'
+                'name': 'Что такое Yieldaa?',
+                'href': '/what-is-Yieldaa'
             },
             {
                 'name': 'Не 1с, а Discord',

@@ -6,7 +6,7 @@ import ScrollToTop from "./ScrollToTop";
 import { NavBar } from "./components/nav-bar/nav-bar";
 
 export const metadata: Metadata = {
-  title: "Matrix One - Разработчикам.",
+  title: "Yieldaa - Разработчикам.",
   description: "",
   appleWebApp: {
     capable: true,

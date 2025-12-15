@@ -157,7 +157,7 @@ export function NavBar() {
             </span>
           </div>
           <div className={styles.logo}>
-            Matrix One <span className={styles.secondary}>Разработчикам</span>
+            Yieldaa <span className={styles.secondary}>Разработчикам</span>
           </div>
         </div>
         
