@@ -1,6 +1,28 @@
 import mu from '@/assets/styles/chunks/markup.module.scss';
+import styles from './page.module.scss';
 import clsx from 'clsx';
 import Link from 'next/link';
+import { techConfig } from './tech.config'; // Импорт конфига
+
+// Функция для получения класса статуса
+const getStatusClass = (status: string) => {
+    switch(status) {
+        case 'using': return clsx(styles.status, styles.using);
+        case 'planned': return clsx(styles.status, styles.planned);
+        case 'deprecated': return clsx(styles.status, styles.deprecated);
+        default: return styles.status;
+    }
+};
+
+// Функция для отображения текста статуса
+const getStatusText = (status: string) => {
+    switch(status) {
+        case 'using': return 'Используется';
+        case 'planned': return 'Запланировано';
+        case 'deprecated': return 'Избавляемся';
+        default: return status;
+    }
+};
 
 export default function Page() {
     return (
@@ -16,6 +38,53 @@ export default function Page() {
                Таким образом, мы стремимся прийти к единой языковой кодовой базе, к ситуации, когда весь код, вне зависимости от предметной области (условно промо-слой или модули самой платформы) написан
                на одних и тех же языках, использует одни и те же библиотеки и поддерживает одни и те же версии ПО.
             </p>
+            <br />
+            <h2 className={mu.h2}>Краткая сводка</h2>
+            <p className={mu.p}>
+               В топиках этой главы мы подробно объясняем основания выбора каждой технологии, но если вы совсем недавно пришли в команду и хотите оценить свои возможности, вот краткая сводка технологического стека.
+            </p>
+            <br />
+            <div className={styles.wrap}>
+                <table className={styles.table}>
+                    <thead className={styles.thead}>
+                        <tr>
+                            <td>Язык / технология</td>
+                            <td>Название</td>
+                            <td>Версия</td>
+                            <td>Область применения</td>
+                            <td>Статус</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {techConfig.map((tech, index) => (
+                            <tr key={index}>
+                                <td>
+                                    <span className={styles.icon}>
+                                        <img 
+                                            src={tech.icon}
+                                        />
+                                    </span>
+                                    {/* {tech.name} */}
+                                </td>
+                                <td>
+                                    {tech.name}
+                                </td>
+                                <td className={mu.accent}>
+                                    {tech.version}
+                                </td>
+                                <td>
+                                    {tech.area}
+                                </td>
+                                <td>
+                                    <span className={getStatusClass(tech.status)}>
+                                        {getStatusText(tech.status)}
+                                    </span>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </>
-    )
+    );
 }

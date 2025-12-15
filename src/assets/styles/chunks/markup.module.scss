@@ -16,19 +16,18 @@
 .p {
     line-height: 1.4;
     width: 100%;
-
-    .secondary {
-        color: var(--color-text-secondary);
-    }
-    .accent {
-        color: var(--color-accent);
-    }
-    .purple {
-        color: var(--color-purple);
-    }
-    .description {
-        color: var(--color-text-description);
-    }
+}
+.secondary {
+    color: var(--color-text-secondary);
+}
+.accent {
+    color: var(--color-accent);
+}
+.purple {
+    color: var(--color-purple);
+}
+.description {
+    color: var(--color-text-description);
 }
 .note {
     display: flex;
