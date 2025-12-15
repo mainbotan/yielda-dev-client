@@ -45,7 +45,9 @@ export default function RootLayout({
                     </div>
                   </div>
                   <div className={styles.content}>
-                    {children}
+                    <div className={styles.center}>
+                      {children}
+                    </div>
                   </div>
               </div>
             </main>

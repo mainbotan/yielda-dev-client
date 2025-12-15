@@ -114,7 +114,16 @@
     flex: 1;
     padding: 2rem;
     overflow: hidden;
-    flex-flow: column nowrap;
+    align-items: start;
+    justify-content: center;
+    padding-right: 30rem;
+
+    .center {
+        display: flex;
+        flex: 1;
+        width: 100%;
+        flex-flow: column nowrap;
+    }
 
     @media (max-width: 720px) {
         padding: 2rem 1rem;
