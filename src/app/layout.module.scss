@@ -89,6 +89,7 @@
     padding-left: 4rem;
     padding-right: 1rem;
     background-color: var(--color-surface-primary);
+    z-index: 1000;
 
     .inner {
         display: block;
@@ -117,6 +118,7 @@
     align-items: start;
     justify-content: center;
     padding-right: 30rem;
+    font-size: .9em;
 
     .center {
         display: flex;

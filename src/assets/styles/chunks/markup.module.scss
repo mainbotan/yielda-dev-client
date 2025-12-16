@@ -11,7 +11,7 @@
     font-size: 1.4em;
 }
 .h3 {
-    font-size: 1em;
+    font-size: 1.05em;
 }
 .p {
     line-height: 1.4;
@@ -29,6 +29,12 @@
 .description {
     color: var(--color-text-description);
 }
+.tag {
+    margin: 0 .2em;
+    padding: 0em .5em;
+    border-radius: .4em;
+    background-color: var(--color-surface-secondary);
+}
 .note {
     display: flex;
     flex-flow: column nowrap;
@@ -41,5 +47,56 @@
     
     &.reminder {
         background-color: rgba(255, 255, 0, 0.062);
+    }
+}
+
+.list {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1em;
+    margin: 1.4em 0;
+    font-size: .9em;
+
+    .row {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 1em;
+
+        .marker {
+            display: inline-flex;
+            align-items: start;
+            justify-content: center;
+
+            .box {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 2em;
+                height: 2em;
+
+                @keyframes animate-marker {
+                    0% {
+                        transform: rotate(0);
+                    }
+                    100% {
+                        transform: rotate(-405deg);
+                    }
+                }
+                span {
+                    border-radius: .1em;
+                    width: .8em;
+                    height: .8em;
+                    background-color: var(--color-accent);
+                    animation: animate-marker 1s forwards;
+                    z-index: 1;
+                }
+            }
+        }
+        .info {
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 0em;
+            justify-content: center;
+        }
     }
 }

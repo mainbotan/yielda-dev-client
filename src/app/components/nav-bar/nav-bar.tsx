@@ -157,7 +157,8 @@ export function NavBar() {
             </span>
           </div>
           <div className={styles.logo}>
-            Yieldaa <span className={styles.secondary}>Разработчикам</span>
+            <span className={styles.primary}>Yield<span className={styles.s}>a</span><span className={styles.s}>a!</span></span> 
+            <span className={styles.secondary}>Разработчикам</span>
           </div>
         </div>
         
