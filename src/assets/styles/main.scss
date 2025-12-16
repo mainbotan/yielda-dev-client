@@ -1,14 +1,18 @@
 @use 'base/reset';
 @use 'base/typography' as *;
-@use 'base/themes/main' as main;
+@use 'base/themes/dark' as dark;
+@use 'base/themes/light' as light;
 
 :root {
   @include font-styles;
-  @include main.theme;
 
   --transition: 0.3s ease;
   --pc-min-width: 1420px;
   --mobile-max-width: 720px;
+  
+  // Транзиции для темы - добавляем только для данных атрибутов
+  transition: background-color var(--transition), 
+              color var(--transition);
 }
 
 html {
@@ -32,6 +36,30 @@ html, body {
     font-size: 1.2em;
   }
 }
+
+// Темная тема по умолчанию (на время загрузки)
+// Это временное состояние, пока скрипт не выполнится
+html:not([data-theme]) {
+  @include dark.theme;
+}
+
+// После выполнения скрипта применяется правильная тема
+html[data-theme="light"] {
+  @include light.theme;
+}
+html[data-theme="dark"] {
+  @include dark.theme;
+}
+
+// Убираем переходы во время загрузки, чтобы избежать мерцания
+html:not([data-theme]) * {
+  transition: none !important;
+}
+html, body {
+  background-color: var(--color-leader);
+  color: var(--color-text-primary);
+}
+
 @media (max-width: 720px) {
   html, body {
     -ms-overflow-style: none;  /* IE и Edge */

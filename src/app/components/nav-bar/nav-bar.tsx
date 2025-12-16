@@ -10,6 +10,7 @@ import { isSectionActive } from '@/assets/utils/sections';
 import styles from './nav-bar.module.scss';
 import clsx from 'clsx';
 import { docsConfig } from '@/app/(docs)/docs.config';
+import { ThemeSwitcher } from './theme-switcher/theme-switcher';
 
 interface NavItemProps {
   item: typeof docsConfig[0];
@@ -161,6 +162,7 @@ export function NavBar() {
             <span className={styles.secondary}>Разработчикам</span>
           </div>
         </div>
+        <ThemeSwitcher />
         
         <div className={styles.branches}>
           {docsConfig.map((item, index) => (
