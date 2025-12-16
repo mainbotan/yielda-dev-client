@@ -31,7 +31,14 @@ export const docsConfig = [
             },
             {
                 name: 'Клиент',
-                href: '/stack/client-side'
+                href: '/stack/client-side',
+                childrens: [
+                    {
+                        name: 'Next.js и инструменты',
+                        href: '/stack/client-side/next-n-tools',
+                        tags: [ 'Geek' ]
+                    }
+                ]
             },
             // {
             //     name: 'Инфраструктура',
