@@ -1,6 +1,6 @@
-type TechStatus = 'using' | 'planned' | 'deprecated' | 'testing';
+export type TechStatus = 'using' | 'planned' | 'deprecated' | 'testing';
 
-interface TechItem {
+export interface TechItem {
     name: string;
     icon: string;
     version: string;
@@ -24,19 +24,26 @@ export const techConfig: TechItem[] = [
         status: 'using'
     },
     {
-        name: 'Redis',
-        icon: '/images/tech/redis.png',
-        version: '8.4.0+',
-        area: 'Базы данных, кэширование',
-        status: 'planned'
+        name: 'Docker',
+        icon: '/images/tech/docker.png',
+        version: '-',
+        area: 'Инфраструктура',
+        status: 'using'
     },
     {
-        name: 'Clickhouse',
-        icon: '/images/tech/clickhouse.png',
-        version: '23.8+',
-        area: 'Базы данных, мониторинг',
-        status: 'planned'
-    },,
+        name: 'K8s',
+        icon: '/images/tech/k8s.png',
+        version: '-',
+        area: 'Инфраструктура',
+        status: 'using'
+    },
+    {
+        name: 'GitLab',
+        icon: '/images/tech/gitlab.png',
+        version: '-',
+        area: 'Инфраструктура',
+        status: 'using'
+    },
     {
         name: 'Yandex Cloud',
         icon: '/images/tech/yandex-cloud.jpg',
@@ -64,5 +71,19 @@ export const techConfig: TechItem[] = [
         version: '1.90.0+',
         area: 'Фронтенд, инструменты',
         status: 'using'
-    }
+    },
+    {
+        name: 'Redis',
+        icon: '/images/tech/redis.png',
+        version: '8.4.0+',
+        area: 'Базы данных, кэширование',
+        status: 'planned'
+    },
+    {
+        name: 'Clickhouse',
+        icon: '/images/tech/clickhouse.png',
+        version: '23.8+',
+        area: 'Базы данных, мониторинг',
+        status: 'planned'
+    },
 ];

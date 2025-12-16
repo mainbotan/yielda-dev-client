@@ -40,10 +40,10 @@ export const docsConfig = [
                     }
                 ]
             },
-            // {
-            //     name: 'Инфраструктура',
-            //     href: '/stack/infrastructure'
-            // }
+            {
+                name: 'Инфраструктура',
+                href: '/stack/infrastructure'
+            }
         ]
     }
 ];
