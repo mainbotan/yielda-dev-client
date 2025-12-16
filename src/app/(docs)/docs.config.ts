@@ -21,12 +21,18 @@ export const docsConfig = [
             {
                 name: 'Серверные языки',
                 href: '/stack/server-side',
-                // tags: [ 'Go' ]
+                childrens: [
+                    {
+                        name: 'Go и инструменты',
+                        href: '/stack/server-side/go-n-tools',
+                        tags: [ 'Geek' ]
+                    }
+                ]
             },
-            // {
-            //     name: 'Клиент',
-            //     href: '/stack/client-side'
-            // },
+            {
+                name: 'Клиент',
+                href: '/stack/client-side'
+            },
             // {
             //     name: 'Инфраструктура',
             //     href: '/stack/infrastructure'

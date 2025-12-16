@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { techConfig } from './tech.config'; // Импорт конфига
 
 // Функция для получения класса статуса
-const getStatusClass = (status: string) => {
+export const getStatusClass = (status: string) => {
     switch(status) {
         case 'using': return clsx(styles.status, styles.using);
         case 'planned': return clsx(styles.status, styles.planned);
@@ -15,7 +15,7 @@ const getStatusClass = (status: string) => {
 };
 
 // Функция для отображения текста статуса
-const getStatusText = (status: string) => {
+export const getStatusText = (status: string) => {
     switch(status) {
         case 'using': return 'Используется';
         case 'planned': return 'Запланировано';

@@ -8,6 +8,9 @@
     overflow: hidden;
     border-radius: .6em;
     
+    .name {
+        white-space: nowrap;
+    }
     thead td {
         background-color: var(--color-surface-secondary);
         text-align: left !important;
