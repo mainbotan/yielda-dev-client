@@ -100,7 +100,7 @@ export default function Page() {
                         <span className={mu.info}>
                             <h2 className={mu.h2}>DNS</h2>
                             <p className={clsx(mu.p, mu.secondary)}>
-                                Для связи поддоменов Yieldaa! с сервисами из нашего кластера в <span className={mu.accent}>Managed Service for Kubernetes</span>. Здесь <span className={mu.tag}>dev.yieldaa.com</span> привязывается к сервису Next.js приложения этой документации, 
+                                Для связи поддоменов Yieldaa! с сервисами из нашего кластера K8s мы используем <span className={mu.accent}>Yandex Cloud DNS</span>. Здесь <span className={mu.tag}>dev.yieldaa.com</span> привязывается к сервису Next.js приложения этой документации, 
                                 <span className={mu.tag}>api.yieldaa.com</span> к api-сервису на Go и по аналогии все остальные публичные сервисы.
                             </p>
                         </span>
