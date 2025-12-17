@@ -42,7 +42,8 @@ export const docsConfig = [
             },
             {
                 name: 'Инфраструктура',
-                href: '/stack/infrastructure'
+                href: '/stack/infrastructure',
+                tags: [ 'Geek' ]
             }
         ]
     }
