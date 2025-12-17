@@ -16,6 +16,7 @@
     "@types/mermaid": "^9.1.0",
     "@types/prismjs": "^1.26.5",
     "clsx": "^2.1.1",
+    "framer-motion": "^12.23.26",
     "mermaid": "^11.12.2",
     "next": "^15.4.6",
     "prismjs": "^1.30.0",
