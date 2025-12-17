@@ -9,7 +9,7 @@ export default function Page() {
         <>
             <h1 className={mu.h1}>Инфраструктура</h1>
             <div className={mu.p}>
-                Этот топик тесно связан с главой <Link className={mu.accent} href='/arhitecture'>архитектура Yieldaa!</Link> Для понимания общей концепции, и требований системы рекомендуем ознакомиться с ней до прочтения этого топика.
+                Этот топик тесно связан с главой <Link className={mu.accent} href='/architecture'>архитектура Yieldaa!</Link> Для понимания общей концепции, и требований системы рекомендуем ознакомиться с ней до прочтения этого топика.
                 <br /><br />
                 Сервисы <Link className={mu.accent} href='https://yandex.cloud'>Yandex Cloud</Link> являются основой всей инфраструктуры Yieldaa. На российском рынке существует
                 много достойных облачных провайдеров, чего стоит один <Link className={mu.accent} href='https://selectel.ru'>Selectel</Link>, однако 
@@ -60,7 +60,7 @@ export default function Page() {
                             <p className={clsx(mu.p, mu.secondary)}>
                                 После того как контейнеры всех сервисов собраны, их необходимо развернуть на рабочих машинках, настроить механизмы репликации и организовать единую точку входа. <br /><br />
                                 Лидером в оркестрации контейнерными приложениями является <span className={mu.tag}>Kubernetes</span>, он же <span className={mu.tag}>K8s</span>. Именно
-                                здесь происходит настройках необходимых ресурсов для обеспечения корректной работы всех сервисов. Сюда и попадают собранные образы из <span className={mu.tag}>Yandex Container Registry</span>.
+                                здесь происходит настройка необходимых ресурсов для обеспечения корректной работы всех сервисов. Сюда и попадают собранные образы из <span className={mu.tag}>Yandex Container Registry</span>.
                                 <br /><br />
                                 Очевидно, в рамках всё того же облачного провайдера Yandex Cloud, мы выбираем его отдельный сервис <span className={mu.tag}>Managed Service for Kubernetes</span>. 
                                 Он отлично интегрируется с <span className={mu.tag}>Yandex Container Registry</span> <span className={mu.description}>очевидно</span>, и берёт на себя управление мастер-нодой нашей системы, что
