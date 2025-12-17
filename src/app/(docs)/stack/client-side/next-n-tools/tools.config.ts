@@ -31,5 +31,11 @@ export const toolsConfig: TechItem[] = [
         version: '3.2.0+',
         area: 'Графики',
         status: 'using'
+    },
+    {
+        name: 'framer-motion',
+        version: '12.23.26+',
+        area: 'Анимации',
+        status: 'using'
     }
 ];

@@ -4,7 +4,7 @@ export const docsConfig = [
         href: '/',
         childrens: [
             {
-                name: 'Что такое Yieldaa?',
+                name: 'Say my name',
                 href: '/what-is-yieldaa'
             },
             {
@@ -45,6 +45,20 @@ export const docsConfig = [
                 href: '/stack/infrastructure',
                 tags: [ 'Geek' ]
             }
+        ]
+    },
+    {
+        name: 'Архитектура Yieldaa!',
+        href: '/architecture',
+        childrens: [
+            // {
+            //     name: 'Слои экосистемы',
+            //     href: '/architecture/ecosystem',
+            // },
+            // {
+            //     name: 'Пользовательская платформа',
+            //     href: '/architecture/platform',
+            // }
         ]
     }
 ];
