@@ -1,6 +1,8 @@
 @use '@/assets/styles/_mixins.scss' as *;
 
-.code-block {
+/* ==================== ОБЩИЕ СТИЛИ ДЛЯ БЛОКОВ КОДА ==================== */
+.code-block,
+.mermaid-viewer {
     display: flex;
     flex: 1;
     flex-flow: column nowrap;
@@ -10,115 +12,194 @@
     border-radius: .5em;
     overflow: hidden;
     color: var(--color-text-primary);
-
-    ._meta {
-        display: flex;
-        flex-flow: row nowrap;
-        background-color: var(--color-leader);
-        height: 3.2em;
-        font-size: 1.1em;
-        padding: 0 .5em 0 1.5em;
-
-        .lang {
-            display: inline-flex;
-            flex-flow: row nowrap;
-
-            .icon {
-                display: inline-flex;
-                min-width: 3.4em;
-                align-items: center;
-                justify-content: center;
-
-                .svg {
-                    width: 2em;
-                    height: auto;
-                    transition: fill var(--transition);
-                }
-            }
-            .name {
-                display: inline-flex;
-                flex-flow: column nowrap;
-                gap: 0.1em;
-                justify-content: center;
-            }
-        }
-        .actions {
-            display: flex;
-            width: 100%;
-            flex-flow: row nowrap;
-            justify-content: end;
-            align-items: center;
-
-            .action {
-                display: inline-flex;
-                flex-flow: row nowrap;
-                gap: .5em;
-                background-color: var(--color-surface-primary);
-                border-radius: .4em;
-                transition: background-color var(--transition);
-                @include cursor(pointer);
-
-                
-                .icon {
-                    display: inline-flex;
-                    width: 2.4em;
-                    height: 2.4em;
-                    align-items: center;
-                    justify-content: center;
-
-                    .svg {
-                        width: 1.4em;
-                        height: 1.4em;
-                        fill: var(--color-icon-primary);
-                        transition: fill var(--transition);
-                    }
-                }
-                .copied-text {
-                    display: flex;
-                    align-items: center;
-                    padding-right: 1em;
-                    transition: color var(--transition);
-                    color: var(--color-text-primary);
-                }
-
-                &:hover {
-                    background-color: var(--color-accent);
-
-                    .copied-text {
-                        color: var(--color-accent-text-primary);
-                    }
-                    .icon .svg {
-                        fill: var(--color-accent-text-primary);
-                    }
-                }
-            }
-        }
-    }
-    
-    pre {
-        padding: 1.2em;
-        overflow: auto;
-        font-family: 'Fira Code', monospace;
-        line-height: 1.2;
-    }
+    margin: 1em 0;
 }
 
+/* ==================== СТИЛИ ДЛЯ МЕТА-ИНФОРМАЦИИ ==================== */
+.code-block ._meta,
+.mermaid-viewer .mermaid-controls {
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: var(--color-leader);
+    height: 3.2em;
+    font-size: 1.1em;
+    padding: 0 .5em 0 1.5em;
+    align-items: center;
+}
+
+/* ==================== СТИЛИ ДЛЯ ЯЗЫКА/КОНТРОЛОВ ==================== */
+.code-block ._meta .lang {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.code-block ._meta .lang .icon {
+    display: inline-flex;
+    min-width: 3.4em;
+    align-items: center;
+    justify-content: center;
+}
+
+.code-block ._meta .lang .icon .svg {
+    width: 2em;
+    height: auto;
+    transition: fill var(--transition);
+}
+
+.code-block ._meta .lang .name {
+    display: inline-flex;
+    flex-flow: column nowrap;
+    gap: 0.1em;
+    justify-content: center;
+}
+
+/* ==================== СТИЛИ ДЛЯ КНОПОК ДЕЙСТВИЙ ==================== */
+.code-block ._meta .actions,
+.mermaid-viewer .mermaid-controls {
+    display: flex;
+    width: 100%;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.code-block ._meta .actions .action,
+.mermaid-viewer .mermaid-controls .control-button {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    gap: .5em;
+    background-color: var(--color-surface-primary);
+    border: 1px solid var(--color-stroke-secondary);
+    border-radius: .4em;
+    padding: 0.5em 1em;
+    align-items: center;
+    transition: all var(--transition);
+    @include cursor(pointer);
+    color: var(--color-text-primary);
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.code-block ._meta .actions .action .icon,
+.mermaid-viewer .mermaid-controls .control-button svg {
+    display: inline-flex;
+    width: 1.4em;
+    height: 1.4em;
+    align-items: center;
+    justify-content: center;
+}
+
+.code-block ._meta .actions .action .icon .svg {
+    width: 1.4em;
+    height: 1.4em;
+    fill: var(--color-icon-primary);
+    transition: fill var(--transition);
+}
+
+.code-block ._meta .actions .action .copied-text {
+    display: flex;
+    align-items: center;
+    padding-right: 0.5em;
+    transition: color var(--transition);
+    color: var(--color-text-primary);
+    font-size: 0.9em;
+}
+
+/* ==================== СОСТОЯНИЯ КНОПОК ==================== */
+.code-block ._meta .actions .action:hover,
+.mermaid-viewer .mermaid-controls .control-button:hover {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.code-block ._meta .actions .action:hover .copied-text,
+.mermaid-viewer .mermaid-controls .control-button:hover {
+    color: var(--color-accent-text-primary);
+}
+
+.code-block ._meta .actions .action:hover .icon .svg,
+.mermaid-viewer .mermaid-controls .control-button:hover svg {
+    fill: var(--color-accent-text-primary);
+}
+
+/* ==================== АКТИВНАЯ КНОПКА Mermaid ==================== */
+.mermaid-viewer .mermaid-controls .control-button[aria-selected="true"] {
+    background-color: var(--color-accent);
+    color: var(--color-accent-text-primary);
+}
+
+.mermaid-viewer .mermaid-controls .control-button[aria-selected="true"] svg {
+    fill: var(--color-accent-text-primary);
+}
+
+/* ==================== СТИЛИ ДЛЯ ПРЕДПРОСМОТРА КОДА ==================== */
+.code-block pre,
+.mermaid-viewer .mermaid-code,
+.mermaid-viewer .mermaid-error,
+.mermaid-viewer .mermaid-diagram {
+    padding: 1.2em;
+    overflow: auto;
+    font-family: 'Fira Code', monospace;
+    line-height: 1.6;
+    margin: 0;
+    min-height: 200px;
+    background-color: var(--color-surface-primary);
+}
+
+/* Специфичные стили для Mermaid */
+.mermaid-viewer .mermaid-code {
+    white-space: pre-wrap;
+    word-break: break-all;
+    color: var(--color-text-primary);
+}
+
+.mermaid-viewer .mermaid-error {
+    color: var(--color-error);
+    border-top: 1px solid var(--color-stroke-secondary);
+}
+
+.mermaid-viewer .mermaid-error pre {
+    margin-top: 1em;
+    padding: 1em;
+    background-color: var(--color-surface-secondary);
+    border-radius: 0.3em;
+    color: var(--color-text-secondary);
+    font-size: 0.9em;
+}
+
+.mermaid-viewer .mermaid-diagram {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mermaid-viewer .mermaid-diagram svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ==================== СТИЛИ ДЛЯ ПРЕФОРМАТИРОВАННОГО КОДА ==================== */
 code[class*="language-"] {
-  white-space: pre;
-  display: block;
-  line-height: 1.6;
+    white-space: pre;
+    display: block;
+    line-height: 1.6;
+    color: var(--color-text-primary);
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9em;
 }
 
-/* ==================== PRISM CODE TOKENS APPLICATION ==================== */
+/* ==================== ПРИМЕНЕНИЕ ТОКЕНОВ PRISM ==================== */
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: var(--color-prism-token-comment);
+    color: var(--color-prism-token-comment);
 }
 
 .token.punctuation {
-  color: var(--color-prism-token-punctuation);
+    color: var(--color-prism-token-punctuation);
 }
 
 .token.property,
@@ -126,12 +207,12 @@ code[class*="language-"] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-  color: var(--color-prism-token-property);
+    color: var(--color-prism-token-property);
 }
 
 .token.boolean,
 .token.number {
-  color: var(--color-prism-token-boolean);
+    color: var(--color-prism-token-boolean);
 }
 
 .token.selector,
@@ -140,7 +221,7 @@ code[class*="language-"] {
 .token.char,
 .token.builtin,
 .token.inserted {
-  color: var(--color-prism-token-string);
+    color: var(--color-prism-token-string);
 }
 
 .token.operator,
@@ -148,38 +229,65 @@ code[class*="language-"] {
 .token.url,
 .language-css .token.string,
 .style .token.string {
-  color: var(--color-prism-token-operator);
+    color: var(--color-prism-token-operator);
 }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-  color: var(--color-prism-token-keyword);
+    color: var(--color-prism-token-keyword);
 }
 
 .token.function {
-  color: var(--color-prism-token-function);
+    color: var(--color-prism-token-function);
 }
 
 .token.regex,
 .token.important,
 .token.variable {
-  color: var(--color-prism-token-variable);
+    color: var(--color-prism-token-variable);
 }
 
 .token.class-name {
-  color: var(--color-prism-token-class);
+    color: var(--color-prism-token-class);
 }
 
 .token.console {
-  color: var(--color-prism-token-output);
+    color: var(--color-prism-token-output);
 }
 
 .token.important,
 .token.bold {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .token.italic {
-  font-style: italic;
+    font-style: italic;
+}
+
+/* ==================== МЕДИА-ЗАПРОСЫ ДЛЯ АДАПТИВНОСТИ ==================== */
+@media (max-width: 768px) {
+    .code-block,
+    .mermaid-viewer {
+        font-size: 0.85em;
+        border-radius: 0.4em;
+    }
+    
+    .code-block ._meta,
+    .mermaid-viewer .mermaid-controls {
+        height: 2.8em;
+        padding: 0 .4em 0 1em;
+        font-size: 1em;
+    }
+    
+    .code-block pre,
+    .mermaid-viewer .mermaid-code,
+    .mermaid-viewer .mermaid-diagram {
+        padding: 1em;
+    }
+    
+    .mermaid-viewer .mermaid-controls .control-button {
+        padding: 0.4em 0.8em;
+        font-size: 0.85em;
+    }
 }
