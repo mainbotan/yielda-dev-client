@@ -69,4 +69,18 @@
     --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.05);
     --shadow-gentle: 0 4px 6px rgba(0, 0, 0, 0.03);
     --shadow-floating: 0 10px 25px rgba(0, 0, 0, 0.05);
+
+    
+    /* ==================== PRISM CODE TOKENS - DARK THEME ==================== */
+    --color-prism-token-comment: #6a9955;
+    --color-prism-token-punctuation: #d4d4d4;
+    --color-prism-token-property: #df89d8;
+    --color-prism-token-boolean: #b5cea8;
+    --color-prism-token-string: #e18d6c;
+    --color-prism-token-operator: #d4d4d4;
+    --color-prism-token-keyword: #569cd6;
+    --color-prism-token-function: #dcdcaa;
+    --color-prism-token-variable: #d16969;
+    --color-prism-token-class: #4ec9b0;
+    --color-prism-token-output: #9cdcfe;
 }

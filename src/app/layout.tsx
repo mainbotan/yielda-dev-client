@@ -4,6 +4,7 @@ import styles from './layout.module.scss';
 import Providers from "./providers";
 import ScrollToTop from "./ScrollToTop";
 import { NavBar } from "./components/nav-bar/nav-bar";
+import '@/assets/chunks/prismjs.scss';
 
 export const metadata: Metadata = {
   title: "Yieldaa! Разработчикам.",

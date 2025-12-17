@@ -1,3 +1,4 @@
+import CodeBlock from '@/app/components/code-block/code-block';
 import mu from '@/assets/styles/chunks/markup.module.scss';
 import clsx from 'clsx';
 import Link from 'next/link';
@@ -9,6 +10,7 @@ export default function Page() {
             <div className={mu.p}>
                
             </div>
+            <CodeBlock lang='go' code={``} />
         </>
     )
 }

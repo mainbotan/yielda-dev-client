@@ -1,0 +1,185 @@
+@use '@/assets/styles/_mixins.scss' as *;
+
+.code-block {
+    display: flex;
+    flex: 1;
+    flex-flow: column nowrap;
+    background: var(--color-surface-primary);
+    font-size: 0.9em;
+    border: 1px solid var(--color-stroke-secondary);
+    border-radius: .5em;
+    overflow: hidden;
+    color: var(--color-text-primary);
+
+    ._meta {
+        display: flex;
+        flex-flow: row nowrap;
+        background-color: var(--color-leader);
+        height: 3.2em;
+        font-size: 1.1em;
+        padding: 0 .5em 0 1.5em;
+
+        .lang {
+            display: inline-flex;
+            flex-flow: row nowrap;
+
+            .icon {
+                display: inline-flex;
+                min-width: 3.4em;
+                align-items: center;
+                justify-content: center;
+
+                .svg {
+                    width: 2em;
+                    height: auto;
+                    transition: fill var(--transition);
+                }
+            }
+            .name {
+                display: inline-flex;
+                flex-flow: column nowrap;
+                gap: 0.1em;
+                justify-content: center;
+            }
+        }
+        .actions {
+            display: flex;
+            width: 100%;
+            flex-flow: row nowrap;
+            justify-content: end;
+            align-items: center;
+
+            .action {
+                display: inline-flex;
+                flex-flow: row nowrap;
+                gap: .5em;
+                background-color: var(--color-surface-primary);
+                border-radius: .4em;
+                transition: background-color var(--transition);
+                @include cursor(pointer);
+
+                
+                .icon {
+                    display: inline-flex;
+                    width: 2.4em;
+                    height: 2.4em;
+                    align-items: center;
+                    justify-content: center;
+
+                    .svg {
+                        width: 1.4em;
+                        height: 1.4em;
+                        fill: var(--color-icon-primary);
+                        transition: fill var(--transition);
+                    }
+                }
+                .copied-text {
+                    display: flex;
+                    align-items: center;
+                    padding-right: 1em;
+                    transition: color var(--transition);
+                    color: var(--color-text-primary);
+                }
+
+                &:hover {
+                    background-color: var(--color-accent);
+
+                    .copied-text {
+                        color: var(--color-accent-text-primary);
+                    }
+                    .icon .svg {
+                        fill: var(--color-accent-text-primary);
+                    }
+                }
+            }
+        }
+    }
+    
+    pre {
+        padding: 1.2em;
+        overflow: auto;
+        font-family: 'Fira Code', monospace;
+        line-height: 1.2;
+    }
+}
+
+code[class*="language-"] {
+  white-space: pre;
+  display: block;
+  line-height: 1.6;
+}
+
+/* ==================== PRISM CODE TOKENS APPLICATION ==================== */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--color-prism-token-comment);
+}
+
+.token.punctuation {
+  color: var(--color-prism-token-punctuation);
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: var(--color-prism-token-property);
+}
+
+.token.boolean,
+.token.number {
+  color: var(--color-prism-token-boolean);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: var(--color-prism-token-string);
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: var(--color-prism-token-operator);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: var(--color-prism-token-keyword);
+}
+
+.token.function {
+  color: var(--color-prism-token-function);
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: var(--color-prism-token-variable);
+}
+
+.token.class-name {
+  color: var(--color-prism-token-class);
+}
+
+.token.console {
+  color: var(--color-prism-token-output);
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
